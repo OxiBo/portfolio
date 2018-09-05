@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning webpack</title>
+    <script src="dist/main.js" async defer></script>
+    <!-- connect to css file after installing the pugin ExtractTextPlugin = require("extract-text-webpack-plugin");
+ -->
+ <!-- <link rel="stylesheet" href="dist/scss/main.scss"> -->
+ <link rel="stylesheet" href="dist/main.css">
+ <!-- <link rel="stylesheet" href="dist/test.css"> -->
+
+<link href="dist/main.css" rel="stylesheet"></head>
+<body>
+
+    <main>
+    <div class='container-fluid'>
+        <div class='page-header'>
+            <h1>Local Weather App</h1>
+            <!-- <img class="testing" src="" alt=""> -->
+        </div>
+    <div id='temperature'>
+        <img id='icon'><h2 id='temp'></h2><a href='#'><h2 id='degrees'></h2></a>
+    </div>
+    <div class="containerFlex">
+        <div class='well details' id='location'><p></p></div>
+            <div class='well details' id='description'><p></p></div>
+            <div class='well details' id='windSpeed'><p></p></div>
+            <div class='well details' id='humidity'><p></p></div>
+    </div>
+
+</div>
+</main>
+
+       <footer><p id=copyright>Written and coded by OxiBo, 2018</p></footer>
+
+
+<script type="text/javascript" src="dist/main.js"></script></body>
+</html>
