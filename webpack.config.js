@@ -10,10 +10,19 @@ let config = {
     ],
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: 'main.js',
-        publicPath: 'dist/'
+        filename: 'main.js'
     },
     devServer: {
+        host: '0.0.0.0',
+        port: 8080,
+        publicPath: '/',
+        // public: 'http://localhost:8080'
+        // stats: 'errors-only',
+        historyApiFallback: true,
+        contentBase: 'dist',
+        // hot: true,
+        inline: true,
+        compress: true,
         overlay: true
     },
     module: {
@@ -50,8 +59,7 @@ let config = {
         // new ExtractTextPlugin("./scss/main.scss"),
         new HtmlWebpackPlugin({
             template: './index.html',
-            filename: 'index.html',
-            inject: true
+            filename: 'index.html'
         })
     ],
     performance: {

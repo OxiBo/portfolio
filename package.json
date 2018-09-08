@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "built": "webpack --mode production",
-    "dev": "webpack-dev-server --mode development --open"
+    "dev": "webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server --config webpack.config.js"
   },
   "author": "OxiBo",
   "license": "ISC",
