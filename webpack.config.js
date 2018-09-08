@@ -3,7 +3,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-
 let config = {
     entry: [
         'babel-polyfill',
@@ -18,66 +17,41 @@ let config = {
         overlay: true
     },
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.js$/,
                 loader: "babel-loader",
                 exclude: "/node_modules/"
             },
-
             {
-                /* support for css file
                 test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                     // use: "css-loader"
-                    use: "css-loader!postcss-loader"
+                // use: ['style-loader', 'css-loader']
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader']
                 })
-                */
-                /* use: [
-                     'style-loader',
-                     'css-loader'
-                 ]*/
-
-                test: /\.(scss)|(css)$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    // use: "css-loader"
-                    use: ['css-loader', 'sass-loader']
-                    // use: "css-loader!sass-loader!postcss-loader"
-                    // use: "css-loader?sourceMap!sass-loader?sourceMap!postcss-loader"???
-                })
-
             },
-
-            // {
-            //     test: /\.(css|scss|sass)$/,
-            //     loader: 'style-loader!css-loader!sass-loader'
-            //     // path: path.resolve(__dirname, 'src/css')
-            // }
-
-
-            // {
-            //     // test: /\.(png|jpg|jpeg|gif)$/i,
-            //     test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-            //     // loader:'url-loader?limit=100000'
-            //     use: [{
-            //         loader: 'file-loader',
-            //     //     loader: 'url-loader'
-            //         options: {
-            //             name: './css/gallery/[name].[ext]'
-            //             // limit: 8192
-            //         }
-
-            //     }]
-            // }
+            {
+                test: /\.scss$/,
+                // use: ['style-loader', 'css-loader', 'sass-loader']
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader']
+                })
+            },
+            {
+                test: /\.(jpe?g|gif|png|svg)$/,
+                use: ['file-loader']
+            }
         ]
     },
     plugins: [
-        new ExtractTextPlugin("main.css"),
+        new ExtractTextPlugin('[name].css'),
         // new ExtractTextPlugin("./scss/main.scss"),
         new HtmlWebpackPlugin({
+            template: './index.html',
             filename: 'index.html',
-            template: './index.html'
+            inject: true
         })
     ],
     performance: {
