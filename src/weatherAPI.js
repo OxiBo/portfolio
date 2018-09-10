@@ -125,11 +125,12 @@ export const mainFunction = () => {
             DOMstrings.$location.text(`${allInfo.city}, ${allInfo.country}`);
         }
 
-        // changeBackground();
+        changeBackground();
 
         function changeBackground() {
             function setBackground(urlImage) {
-                DOMstrings.$background.css('background-image', 'url("css/gallery/' + urlImage + '")');
+                // DOMstrings.$background.css('background-image', 'url("./src/scss/gallery/' + urlImage + '")');
+                 DOMstrings.$background.css('background-image', 'url("./gallery/' + urlImage + '")');
             };
 
             switch (true) {
