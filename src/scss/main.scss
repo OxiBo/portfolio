@@ -2,8 +2,8 @@ html body, .container-fluid {
   height: 100%;
   margin: 0;
   padding: 0;
-// background: mistyrose;
-  background: url('gallery/default1.jpg') no-repeat center center fixed;
+background: mistyrose;
+  background: url('./gallery/default1.jpg') no-repeat center center fixed;
   background-size: cover;
   text-align: center;
  }
@@ -30,6 +30,8 @@ main{
       -ms-flex: 1 100%;
           flex: 1 100%;
 }
+
+
 
 .containerFlex {
   display: -webkit-box;
