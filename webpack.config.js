@@ -2,6 +2,7 @@ const path = require('path');
 // const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let config = {
     entry: [
@@ -13,13 +14,13 @@ let config = {
         filename: 'main.js'
     },
     devServer: {
-        host: '0.0.0.0',
-        port: 8080,
+        // host: '0.0.0.0',
+        port: 8081,
         publicPath: '/',
         // public: 'http://localhost:8080'
         // stats: 'errors-only',
         historyApiFallback: true,
-        contentBase: 'dist',
+        contentBase: path.join(__dirname, 'dist'), //'./dist',
         // hot: true,
         inline: true,
         compress: true,
@@ -37,7 +38,7 @@ let config = {
                 // use: ['style-loader', 'css-loader']
                 loader: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader']
+                    use: ['css-loader?url=false', 'postcss-loader']
                 })
             },
             {
@@ -45,7 +46,7 @@ let config = {
                 // use: ['style-loader', 'css-loader', 'sass-loader']
                 loader: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
+                    use: ['css-loader?url=false', 'postcss-loader', 'sass-loader']// use ?url=false to be able to load the background images
                 })
             },
             {
@@ -60,7 +61,8 @@ let config = {
         new HtmlWebpackPlugin({
             template: './index.html',
             filename: 'index.html'
-        })
+        }),
+        new CopyWebpackPlugin([{from: './src/scss/gallery', to: './gallery'}])// copies folder gallery with images to dist
     ],
     performance: {
         hints: process.env.NODE_ENV === 'production' ? "warning" : false
