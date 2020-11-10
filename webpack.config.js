@@ -10,7 +10,8 @@ let config = {
         './src/index.js'
     ],
     output: {
-        path: path.resolve(__dirname, './dist'),
+        // path: path.resolve(__dirname, './dist'),
+        path: '/',
         filename: 'main.js'
     },
     devServer: {
