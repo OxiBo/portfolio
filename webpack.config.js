@@ -12,7 +12,7 @@ let config = {
     output: {
         // path: path.resolve(__dirname, './dist'),
         path: '/',
-        filename: 'main.js'
+        filename: 'index.js'
     },
     devServer: {
         // host: '0.0.0.0',
