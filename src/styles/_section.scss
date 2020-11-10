@@ -1,0 +1,45 @@
+section {
+  min-height: 25vh;
+  padding: 4rem 2rem;
+ 
+  h1 {
+    font-size: 5rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 3rem 0 0 0;
+  }
+  h3 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+  // img {
+  //   width: 8rem;
+  // }
+  p {
+    padding-top: 1rem;
+  }
+
+  @media only screen and (min-width: 600px) {
+    div {
+      // width: calc(80% + 3rem);
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    div {
+      // width: calc(80% + 3rem);
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    div {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+}

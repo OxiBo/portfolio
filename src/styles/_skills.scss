@@ -1,0 +1,31 @@
+section#skills {
+  background-color: white;
+//   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 100px));
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-around;
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 25%;
+      padding: 0.5rem;
+      img {
+        width: 6rem;
+      }
+      p {
+        width: 10rem;
+        padding: 1rem;
+      }
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    // ul{
+    //     width: 70%;
+    //     margin: 0 auto;
+    // }
+  }
+}

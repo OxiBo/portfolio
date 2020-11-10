@@ -15,7 +15,7 @@ let config = {
     },
     devServer: {
         // host: '0.0.0.0',
-        port: 8081,
+        port: 6060,
         publicPath: '/',
         // public: 'http://localhost:8080'
         // stats: 'errors-only',
@@ -46,11 +46,11 @@ let config = {
                 // use: ['style-loader', 'css-loader', 'sass-loader']
                 loader: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader?url=false', 'postcss-loader', 'sass-loader']// use ?url=false to be able to load the background images
+                    use: ['css-loader?url=false', 'postcss-loader', 'sass-loader']// use ?url=false to be able to load the background images(the explanation is from local-weather-api)
                 })
             },
             {
-                test: /\.(jpe?g|gif|png|svg)$/,
+                test: /\.(jpe?g|gif|png|svg|pdf)$/,
                 use: ['file-loader']
             }
         ]
@@ -62,7 +62,7 @@ let config = {
             template: './index.html',
             filename: 'index.html'
         }),
-        new CopyWebpackPlugin([{from: './src/scss/gallery', to: './gallery'}])// copies folder gallery with images to dist
+        new CopyWebpackPlugin([{from: './src/styles/gallery', to: './gallery'}, {from: './src/pdf-docs', to: './pdf-docs'}])// copies folder gallery with images to dist
     ],
     performance: {
         hints: process.env.NODE_ENV === 'production' ? "warning" : false

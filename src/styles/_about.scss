@@ -1,0 +1,44 @@
+section#about {
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path
+  // clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 100px));
+  // background-color: lightgreen;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 4rem auto;
+    div.my-image {
+      img {
+        width: 90%;
+      }
+    }
+    div.details {
+      flex: 1 100%;
+      text-align: center;
+      padding: 1rem;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      p{
+        font-size: 2.5rem;
+      }
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    div {
+      flex-wrap: nowrap;
+      margin: 0.5rem auto;
+      .my-image {
+        img {
+          width: 40rem;
+        }
+      }
+      .details {
+        flex: 1 20rem;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
