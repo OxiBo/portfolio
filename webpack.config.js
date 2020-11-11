@@ -12,7 +12,8 @@ let config = {
     output: {
         path: path.resolve(__dirname, './dist'),
         // path: '/',
-        filename: 'index.js'
+        filename: 'index.js',
+        publicPath: "/portfolio/"
     },
     devServer: {
         // host: '0.0.0.0',
