@@ -11,7 +11,7 @@ let config = {
     // path: '/',
     filename: "index.js",
     // publicPath: "/portfolio/"
-    publicPath: "/",
+    // publicPath: "/",
   },
   devServer: {
     // host: '0.0.0.0',
