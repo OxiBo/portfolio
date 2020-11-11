@@ -7,7 +7,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 let config = {
   entry: ["babel-polyfill", "./src/index.js"],
   output: {
-    path: path.resolve(__dirname, "./dist"),
+    path: path.resolve(__dirname, "dist"),
     // path: '/',
     filename: "index.js",
     // publicPath: "/portfolio/"
